@@ -1,0 +1,7 @@
+{
+  "/services/[serviceId]/products/[id]/page": "app/services/[serviceId]/products/[id]/page.js",
+  "/cart/page": "app/cart/page.js",
+  "/checkout/page": "app/checkout/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/contact/page": "app/contact/page.js"
+}
