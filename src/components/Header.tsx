@@ -46,7 +46,7 @@ const ServicesDropdown: React.FC<{ className?: string }> = ({ className }) => (
 
 export default function Header() {
   return (
-    <header className="navbar bg-[#263238] w-full border-slate-100 ">
+    <header className="navbar md:px-[64px] bg-[#263238] w-full border-slate-100 ">
       <div className=" w-full flex justify-between items-center lg:px-4">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
