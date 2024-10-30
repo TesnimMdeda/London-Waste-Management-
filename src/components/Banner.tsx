@@ -19,7 +19,7 @@ export default function Banner({ imageUrl, title, subtitle }: BannerProps) {
       />
       <div className="absolute inset-0" />
       <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-12">
-        <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+        <h1 className=" font-bold text-white md:text-[52px] text-2xl">
           {title}
         </h1>
         {subtitle && (

@@ -3,7 +3,7 @@ import React from "react";
 export default function privacy() {
   return (
     <div className="md:px-32 px-10  w-full py-8">
-      <h1 className="text-4xl font-bold text-[#8DC044] mb-6">Who we are</h1>
+      <h1 className="md:text-[52px] text-2xl font-bold text-[#8DC044] mb-6">Who we are</h1>
       <div className="text-gray-700 text-xl">
         <p>
           Our website address is:{" "}

@@ -238,7 +238,7 @@ export default function QuotationForm({ banner }: { banner?: boolean }) {
             {...getRootProps()}
           >
             <input {...getInputProps()} />
-            <p className="mb-2 text-4xl text-bold">Drag & Drop Files Here</p>
+            <p className="mb-2 md:text-[52px] text-2xl text-bold">Drag & Drop Files Here</p>
             <p className="text-xl text-bold my-4">OR</p>
             <Button
               type="button"

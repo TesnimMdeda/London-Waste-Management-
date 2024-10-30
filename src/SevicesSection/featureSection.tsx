@@ -29,7 +29,6 @@ export const Feature: React.FC<FeatureProps> = ({
   );
 };
 
-// Example feature data (array of objects)
 export const features = [
   {
     icon: <Image src={Satisfcation} alt="Satisfaction Icon" />,

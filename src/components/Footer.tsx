@@ -42,7 +42,7 @@ export default function Footer() {
       <section className="bg-[#243037] text-white">
         <div className="mx-auto flex flex-col-reverse md:flex-row items-center ">
           <div className="md:w-1/2 mb-8 md:mb-0 md:p-24 p-12 ">
-            <h1 className="md:text-4xl flex flex-row text-3xl font-bold mb-4 text-center md:text-left">
+            <h1 className="md:text-[52px] text-2xl flex flex-row  font-bold mb-4 text-center md:text-left">
               Already to get rid of trash from your home? Let's Talk!
             </h1>
             <div className="flex flex-col md:flex-row md:items-start items-center space-y-2 md:space-y-0 md:space-x-4 mb-4 text-[#8DC044]">

@@ -93,7 +93,7 @@ export default function Service({ id }: { id?: string }) {
       />
       <div className=" mx-auto p-4 px-20 ">
         <div className="flex justify-center items-center my-10">
-          <p className="text-4xl mr-2 font-bold md:text-left text-center">
+          <p className="md:text-[52px] text-2xl mr-2 font-bold md:text-left text-center mb-8">
             Why Book Your Removal With Us?
           </p>
         </div>
@@ -270,7 +270,7 @@ export default function Service({ id }: { id?: string }) {
           <CardContent className="p-6">
             <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-start">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-[#263238] md:text-left text-center">
+                <h2 className="text-2xl font-bold tracking-tight text-[#263238] md:text-left md:text-[52px] text-center">
                   Fair and simple pricing
                 </h2>
               </div>

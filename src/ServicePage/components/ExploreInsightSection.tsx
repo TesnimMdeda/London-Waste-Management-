@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Explore() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-10">
       <div className="text-center mb-4">
         <div className="flex justify-center items-center">
           <p className="text-2xl mr-2 font-400">
@@ -26,7 +26,7 @@ export default function Explore() {
           <Button className="btn text-lg m-2 text-bold hover:bg-transparent shadow-none  bg-transparent border-none text-[#8DC044]">
             View Full
             <CaretRightIcon
-              className="CaretLeft size-7 mr-10"
+              className="CaretLeft size-7"
               aria-hidden="true"
             />
           </Button>

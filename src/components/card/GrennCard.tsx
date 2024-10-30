@@ -17,7 +17,7 @@ export const SatisfactionSection = () => {
 
       <div className=" md:px-12 lg:px-24 md:text-left text-center">
         <div className="md:grid md:grid-cols-2 md:gap-24 p-6">
-          <h2 className="text-white md:text-4xl text-3xl font-bold mb-4">
+          <h2 className="text-white md:text-[52px] text-2xl font-bold mb-4">
             Fast, Friendly, and Satisfaction Guarantee
           </h2>
           <p className="text-[#263238] text-sm max-w-2xl mx-auto mt-8">

@@ -18,7 +18,7 @@ const ServiceSection: React.FC = () => {
     <div className="flex flex-col items-center mt-20 w-full">
       <div className="text-center mb-4">
         <div className="flex justify-center items-center">
-          <p className="text-4xl mr-2 font-bold">Our Service</p>
+          <p className="md:text-[52px] text-2xl mr-2 font-bold">Our Service</p>
         </div>
         <p className="text-md text-gray-500 mt-3 m-4 max-w-[480px]">
           Lorem ipsum dolor sit amet consectetur. Nunc risus ipsum ut et amet

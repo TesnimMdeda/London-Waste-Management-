@@ -25,7 +25,7 @@ export default function HomeSection() {
         {/* Left side - Text Content */}
         <div className="flex-1 w-full h-full text-left">
           <CardHeader>
-            <CardTitle className="text-3xl sm:text-4xl font-bold text-black text-center md:text-left mb-8">
+            <CardTitle className="md:text-[52px] text-2xl font-bold text-black text-center md:text-left mb-8 ">
               Professional for your home services
             </CardTitle>
             <CardDescription className=" text-base text-gray-600 text-center md:text-left mt-10">
@@ -61,7 +61,12 @@ export default function HomeSection() {
         {/* Right side - Overlapping Circular Images */}
         <div className="flex-1 flex  justify-end mt:pt-20 ">
           <div>
-            <Image src={logoImg} alt="Home Services Collage" />
+            <Image
+              src={logoImg}
+              alt="Home Services Collage"
+              width={400}
+              height={400}
+            />
           </div>
         </div>
       </CardContent>

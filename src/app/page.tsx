@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Banner />
-      <div className="flex flex-col justify-center items-center mx-20 ">
+      <div className="flex flex-col justify-center items-center md:mx-20 mx-10 ">
         <ServiceSection />
         <HomeSection />
         <SatisfactionSection />

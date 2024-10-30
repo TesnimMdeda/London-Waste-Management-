@@ -24,7 +24,7 @@ export default function BlogPostDetails({ id }: { id: string }) {
             height={600}
             className="w-full h-[400px] object-cover mb-8 rounded-lg"
           />
-          <h1 className="text-4xl font-bold mb-4 text-[#8DC044]">
+          <h1 className="md:text-[52px] text-2xlfont-bold mb-4 text-[#8DC044]">
             {post.title}
           </h1>
           <div className="flex gap-5 ">

@@ -32,7 +32,7 @@ export default function FAQ() {
           <h2 className="text-2xl font-bold mb-4">
             Frequently Asked Questions
           </h2>
-          <Faq />
+          <Faq style="style1" />
         </div>
         <div className="flex-1 mx-20">
           <Card>

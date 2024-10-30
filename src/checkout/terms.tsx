@@ -3,7 +3,7 @@ import React from "react";
 export default function Component() {
   return (
     <div className="md:px-32 px-10 w-full py-8">
-      <h1 className="text-4xl font-bold text-[#8DC044] mb-6">
+      <h1 className="md:text-[52px] text-2xl font-bold text-[#8DC044] mb-6">
         Terms & Conditions
       </h1>
       <div className="text-gray-700 text-xl">
