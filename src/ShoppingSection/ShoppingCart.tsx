@@ -36,7 +36,7 @@ export default function ShoppingCart() {
   return (
     <div>
       <Banner imageUrl={img.src} title="Cart" />
-      <div className="p-10">
+      <div className="p-10 mx-20">
         <h1 className="text-2xl font-bold mb-6">Shopping Cart</h1>
         <div className="grid gap-6 md:grid-cols-[2fr_1fr] max-w-full">
           <div className="order-1 w-full max-w-full">
@@ -113,7 +113,6 @@ export default function ShoppingCart() {
                   </tbody>
                 </table>
 
-                {/* Back to shop button */}
                 <div className="flex justify-between mt-6">
                   <Link href="/services">
                     <Button
@@ -127,10 +126,9 @@ export default function ShoppingCart() {
               </CardContent>
             </Card>
           </div>
-          <div className="md:order-2 order-last w-full max-w-full">
+          <div className="md:order-2 order-last w-full max-w-full ">
             <OrderDeatils title="Card Totals" />
           </div>
-
           <div className="md:order-3 order-2 w-full max-w-full">
             <p className="font-bold text-[#8DC044] mb-5 w-full">
               ALL ITEMS TO BE LEFT OUTSIDE AND COLLECTED ANYTIME DURING THE DAY
@@ -200,7 +198,7 @@ export default function ShoppingCart() {
                           key={slot}
                           variant={timeSlot === slot ? "default" : "outline"}
                           className={cn(
-                            "w-full justify-center rounded-badge",
+                            "w-full justify-center rounded-full",
                             timeSlot === slot &&
                               "bg-[#9AC653] hover:bg-[#8AB643] text-white"
                           )}

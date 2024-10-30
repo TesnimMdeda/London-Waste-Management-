@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Faq from "@/faq/faq";
+import Link from "next/link";
 
 export default function FAQ() {
   return (

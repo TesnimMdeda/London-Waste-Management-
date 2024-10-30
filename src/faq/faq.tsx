@@ -154,23 +154,30 @@ export default function faq() {
     },
   ];
   return (
-    <Card className="border-none">
+    <Card className="border-none shadow-none">
       <CardContent className="px-6 w-full mt-8">
         {faqData.map((item, index) => (
-          <div key={index} className="mb-4 last:mb-0 ">
+          <div
+            key={index}
+            className={`p-6 last:mb-0    ${
+              openItem === index ? "bg-muted " : ""
+            }`}
+          >
             <button
-              className="flex justify-between items-center w-full text-left mb-8"
+              className="flex justify-between items-center w-full text-left"
               onClick={() => toggleItem(index)}
             >
-              <span className="font-bold text-lg ">{item.question}</span>
+              <span className="font-bold text-lg">{item.question}</span>
               {openItem === index ? (
-                <ChevronUp className="h-5 w-5 text-muted-foreground" />
+                <ChevronUp className="h-5 w-5 text-muted-foreground shrink-0" />
               ) : (
-                <ChevronDown className="h-5 w-5 text-muted-foreground" />
+                <ChevronDown className="h-5 w-5 text-muted-foreground shrink-0" />
               )}
             </button>
             {openItem === index && (
-              <p className="mt-2 text-black">{item.answer}</p>
+              <div className="mt-4 text-muted-foreground space-y-2">
+                {item.answer}
+              </div>
             )}
           </div>
         ))}

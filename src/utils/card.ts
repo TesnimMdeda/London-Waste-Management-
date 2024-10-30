@@ -45,7 +45,6 @@ export const cardData: ServiceCardProps[] = [
         details: ["Max weight 200kg", "No garden or construction waste"],
         imgSrc: img2.src,
       },
-      // ... (repeat for other products)
     ],
   },
   {

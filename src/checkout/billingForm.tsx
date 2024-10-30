@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { CreditCard, DollarSign, MapPin } from "lucide-react";
+import { Car, CreditCard, DollarSign, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -79,7 +79,7 @@ export default function BillingForm() {
       <Banner imageUrl={Billing.src} title="Billing" />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto p-6 bg-white rounded-lg shadow px-8"
+        className="mx-20 mt-20 p-6 bg-white  px-8"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2 order-2 md:order-1">
@@ -341,120 +341,126 @@ export default function BillingForm() {
                 </div>
               </CardContent>
             </Card>
-            <div className="mt-8">
-              <h2 className="text-2xl font-semibold mb-4">Payment Option</h2>
-              <Controller
-                name="paymentMethod"
-                control={control}
-                render={({ field }) => (
-                  <RadioGroup
-                    onValueChange={(value) => {
-                      field.onChange(value);
-                      setPaymentMethod(value);
-                    }}
-                    value={field.value}
-                    className="grid grid-cols-5 gap-4"
-                  >
-                    {paymentOptions.map((option) => (
-                      <div
-                        key={option.value}
-                        className="flex flex-col items-center justify-between bg-background md:border md:border-input rounded-md p-4 h-full"
-                      >
-                        <div className="flex flex-col items-center">
-                          <div className="mb-2 h-8">{option.icon}</div>
-                          <Label
-                            htmlFor={option.value}
-                            className="text-sm text-center"
-                          >
-                            {option.label}
-                          </Label>
-                        </div>
-                        <RadioGroupItem
-                          value={option.value}
-                          id={option.value}
-                          className="mt-2 border-2 border-gray-300 text-[#8DC044] focus:border-[#8DC044] focus:ring-[#8DC044] data-[state=checked]:border-[#8DC044]"
+            <Card className="mt-8">
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold mb-4">
+                  Payment Option
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Controller
+                  name="paymentMethod"
+                  control={control}
+                  render={({ field }) => (
+                    <RadioGroup
+                      onValueChange={(value) => {
+                        field.onChange(value);
+                        setPaymentMethod(value);
+                      }}
+                      value={field.value}
+                      className="grid grid-cols-5 gap-4"
+                    >
+                      {paymentOptions.map((option) => (
+                        <div
+                          key={option.value}
+                          className="flex flex-col items-center justify-between bg-background md:border md:border-input rounded-md p-4 h-full"
                         >
-                          <span>Select {option.label}</span>
-                        </RadioGroupItem>
+                          <div className="flex flex-col items-center">
+                            <div className="mb-2 h-8">{option.icon}</div>
+                            <Label
+                              htmlFor={option.value}
+                              className="text-sm text-center"
+                            >
+                              {option.label}
+                            </Label>
+                          </div>
+                          <RadioGroupItem
+                            value={option.value}
+                            id={option.value}
+                            className="mt-2 border-2 border-gray-300 text-[#8DC044] focus:border-[#8DC044] focus:ring-[#8DC044] data-[state=checked]:border-[#8DC044]"
+                          >
+                            <span>Select {option.label}</span>
+                          </RadioGroupItem>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                  )}
+                />
+                {watchPaymentMethod === "credit-card" && (
+                  <div className="mt-8">
+                    <h2 className="text-2xl font-semibold mb-4">
+                      Credit Card Information
+                    </h2>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="col-span-2">
+                        <Label htmlFor="cardName">Name on Card</Label>
+                        <Controller
+                          name="cardName"
+                          control={control}
+                          render={({ field }) => (
+                            <Input
+                              id="cardName"
+                              placeholder="Name on Card"
+                              className="focus:ring-0 focus:border-[#8DC044] focus:border-2 rounded-full"
+                              style={{ boxShadow: "none" }}
+                              {...field}
+                            />
+                          )}
+                        />
                       </div>
-                    ))}
-                  </RadioGroup>
+                      <div className="col-span-2">
+                        <Label htmlFor="cardNumber">Card Number</Label>
+                        <Controller
+                          name="cardNumber"
+                          control={control}
+                          render={({ field }) => (
+                            <Input
+                              id="cardNumber"
+                              placeholder="Card Number"
+                              className="focus:ring-0 focus:border-[#8DC044] focus:border-2 rounded-full"
+                              style={{ boxShadow: "none" }}
+                              {...field}
+                            />
+                          )}
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="expiryDate">Expiry Date</Label>
+                        <Controller
+                          name="expiryDate"
+                          control={control}
+                          render={({ field }) => (
+                            <Input
+                              id="expiryDate"
+                              placeholder="MM/YY"
+                              className="focus:ring-0 focus:border-[#8DC044] focus:border-2 rounded-full"
+                              style={{ boxShadow: "none" }}
+                              {...field}
+                            />
+                          )}
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="cvv">CVV</Label>
+                        <Controller
+                          name="cvv"
+                          control={control}
+                          render={({ field }) => (
+                            <Input
+                              id="cvv"
+                              placeholder="CVV"
+                              className="focus:ring-0 focus:border-[#8DC044] focus:border-2 rounded-full"
+                              style={{ boxShadow: "none" }}
+                              {...field}
+                            />
+                          )}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 )}
-              />
-            </div>
-            {watchPaymentMethod === "credit-card" && (
-              <div className="mt-8">
-                <h2 className="text-2xl font-semibold mb-4">
-                  Credit Card Information
-                </h2>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="col-span-2">
-                    <Label htmlFor="cardName">Name on Card</Label>
-                    <Controller
-                      name="cardName"
-                      control={control}
-                      render={({ field }) => (
-                        <Input
-                          id="cardName"
-                          placeholder="Name on Card"
-                          className="focus:ring-0 focus:border-[#8DC044] focus:border-2 rounded-full"
-                          style={{ boxShadow: "none" }}
-                          {...field}
-                        />
-                      )}
-                    />
-                  </div>
-                  <div className="col-span-2">
-                    <Label htmlFor="cardNumber">Card Number</Label>
-                    <Controller
-                      name="cardNumber"
-                      control={control}
-                      render={({ field }) => (
-                        <Input
-                          id="cardNumber"
-                          placeholder="Card Number"
-                          className="focus:ring-0 focus:border-[#8DC044] focus:border-2 rounded-full"
-                          style={{ boxShadow: "none" }}
-                          {...field}
-                        />
-                      )}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="expiryDate">Expiry Date</Label>
-                    <Controller
-                      name="expiryDate"
-                      control={control}
-                      render={({ field }) => (
-                        <Input
-                          id="expiryDate"
-                          placeholder="MM/YY"
-                          className="focus:ring-0 focus:border-[#8DC044] focus:border-2 rounded-full"
-                          style={{ boxShadow: "none" }}
-                          {...field}
-                        />
-                      )}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="cvv">CVV</Label>
-                    <Controller
-                      name="cvv"
-                      control={control}
-                      render={({ field }) => (
-                        <Input
-                          id="cvv"
-                          placeholder="CVV"
-                          className="focus:ring-0 focus:border-[#8DC044] focus:border-2 rounded-full"
-                          style={{ boxShadow: "none" }}
-                          {...field}
-                        />
-                      )}
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
+              </CardContent>
+            </Card>
             <div className="mt-8">
               <h2 className="text-2xl font-semibold mb-4">
                 Additional Information

@@ -23,7 +23,7 @@ export default function blogCard({
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
       {posts.slice(index, index + 3).map((post) => (
-        <Card key={post.id} className="w-fit">
+        <Card key={post.id} className="w-fit border-none shadow-none ">
           <CardContent>
             <Image
               src={post.imgSrc}

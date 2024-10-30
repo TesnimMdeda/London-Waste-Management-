@@ -238,9 +238,12 @@ export default function QuotationForm({ banner }: { banner?: boolean }) {
             {...getRootProps()}
           >
             <input {...getInputProps()} />
-            <p className="mb-2">Drag & Drop Files Here</p>
-            <p className="text-sm text-gray-500 mb-4">OR</p>
-            <Button type="button" variant="outline">
+            <p className="mb-2 text-4xl text-bold">Drag & Drop Files Here</p>
+            <p className="text-xl text-bold my-4">OR</p>
+            <Button
+              type="button"
+              className="bg-transparent text-[#8DC044] text-lg underline "
+            >
               Browse Files
             </Button>
           </div>
@@ -269,7 +272,7 @@ export default function QuotationForm({ banner }: { banner?: boolean }) {
           <div className="flex justify-end">
             <Button
               type="submit"
-              className="bg-[#8DC044] hover:bg-[#8DC044] text-white"
+              className="bg-[#8DC044] hover:bg-[#8DC044] text-white rounded-full px-20"
             >
               REQUEST A QUOTE
             </Button>

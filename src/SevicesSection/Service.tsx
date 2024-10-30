@@ -91,7 +91,7 @@ export default function Service({ id }: { id?: string }) {
         title="Our Services"
         subtitle="Lorem ipsum dolor sit amet consectetur. Nunc risus ipsum ut et amet est in porttitor lacus. Id nisl nulla elementum vulputate vitae."
       />
-      <div className=" mx-auto p-4 ">
+      <div className=" mx-auto p-4 px-20 ">
         <div className="flex justify-center items-center my-10">
           <p className="text-4xl mr-2 font-bold md:text-left text-center">
             Why Book Your Removal With Us?

@@ -68,10 +68,6 @@ export default function MovingServices() {
       <div className="mx-10 mb-14">
         <SatisfactionSection />
       </div>
-      <QuotationForm />
-      <div className="mx-10 mb-14">
-        <SatisfactionSection />
-      </div>
     </div>
   );
 }

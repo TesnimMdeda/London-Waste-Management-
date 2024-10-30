@@ -27,14 +27,14 @@ export default function FAQ() {
   return (
     <div>
       <Banner imageUrl={faqBanner.src} title="FAQ" />
-      <div className="flex flex-col md:flex-row gap-8 p-10 ">
+      <div className="flex flex-col md:flex-row gap-8 p-10 mx-20 ">
         <div className="flex-1">
           <h2 className="text-2xl font-bold mb-4">
             Frequently Asked Questions
           </h2>
           <Faq />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 mx-20">
           <Card>
             <CardHeader>
               <CardTitle className="p-4 mb-4">
