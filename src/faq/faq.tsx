@@ -1,24 +1,24 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { ChevronUp, ChevronDown, Plus, Minus } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChevronUp, ChevronDown, Plus, Minus } from "lucide-react";
 
 interface FAQItem {
-  question: string
-  answer: React.ReactNode
+  question: string;
+  answer: React.ReactNode;
 }
 
 interface FAQProps {
-  style: 'style1' | 'style2'
+  style: "style1" | "style2";
 }
 
 export default function Faq({ style }: FAQProps) {
-  const [openItem, setOpenItem] = useState<number | null>(null)
+  const [openItem, setOpenItem] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
-    setOpenItem(openItem === index ? null : index)
-  }
+    setOpenItem(openItem === index ? null : index);
+  };
   const faqData: FAQItem[] = [
     {
       question: "How do I pay?",
@@ -164,66 +164,79 @@ export default function Faq({ style }: FAQProps) {
 
   return (
     <Card className="border-none shadow-none">
-      <CardContent className={style === 'style1' ? "p-0 space-y-4" : "md:px-6 w-full mt-0"}>
+      <CardContent
+        className={style === "style1" ? "p-0 space-y-4" : "md:px-6 w-full mt-0"}
+      >
         {faqData.map((item, index) => (
-          <div
+          <Card
             key={index}
             className={`
-              ${style === 'style1' 
-                ? `rounded-lg overflow-hidden transition-all duration-200 ${openItem === index ? "bg-muted" : ""}`
-                : `pb-8 last:mb-0 ${openItem === index ? "bg-muted p-4" : ""}`
+              ${
+                style === "style1"
+                  ? `rounded-full shadow-none ${
+                      openItem === index ? " border-none " : ""
+                    }`
+                  : `pb-8 last:mb-0 border-none shadow-none ${
+                      openItem === index ? "bg-muted p-4" : ""
+                    }`
               }
             `}
           >
             <button
               className={`
-                flex justify-between items-center w-full text-left
-                ${style === 'style1'
-                  ? `p-6 transition-all duration-200 ${
-                      openItem === index 
-                        ? "bg-[#8DC044] text-white rounded-t-lg" 
-                        : "hover:bg-muted/50 rounded-lg"
+              flex justify-between items-center w-full text-left
+              ${
+                style === "style1"
+                  ? `p-4 ${
+                      openItem === index
+                        ? "bg-[#8DC044] text-white "
+                        : "hover:bg-muted/50 rounded-full"
                     }`
-                  : ''
-                }
+                  : ""
+              }
               `}
               onClick={() => toggleItem(index)}
               aria-expanded={openItem === index}
               aria-controls={`faq-answer-${index}`}
             >
-              <span className={style === 'style1' ? "font-medium text-base" : "font-bold text-lg text-[#545971]"}>
+              <span
+                className={
+                  style === "style1"
+                    ? "font-medium text-base "
+                    : "font-bold text-lg text-[#545971]"
+                }
+              >
                 {item.question}
               </span>
-              {style === 'style2' ? (
+              {style === "style2" ? (
                 openItem === index ? (
                   <ChevronUp className="h-5 w-5 shrink-0 text-[#8DC044]" />
                 ) : (
                   <ChevronDown className="h-5 w-5 shrink-0 text-[#8DC044]" />
                 )
+              ) : openItem === index ? (
+                <Minus className="h-5 w-5 text-muted-foreground shrink-0 text-[#8DC044]" />
               ) : (
-                openItem === index ? (
-                  <Minus className="h-5 w-5 text-muted-foreground shrink-0 text-[#8DC044]" />
-                ) : (
-                  <Plus className="h-5 w-5 text-muted-foreground shrink-0 text-[#8DC044]" />
-                )
+                <Plus className="h-5 w-5 text-muted-foreground shrink-0 text-[#8DC044]" />
               )}
             </button>
             {openItem === index && (
-              <div 
+              <CardContent
                 id={`faq-answer-${index}`}
                 className={`
-                  ${style === 'style1' 
-                    ? "px-6 py-4 bg-white text-[#737373] shadow-lg rounded-b-lg"
+                ${
+                  style === "style1"
+                    ? "px-6 py-4 bg-white text-[#737373] shadow-lg rounded-b-badge"
                     : "mt-4 text-[#737373] space-y-2"
-                  }
-                `}
+                }
+              `}
               >
                 {item.answer}
-              </div>
+              </CardContent>
             )}
-          </div>
+          </Card>
         ))}
       </CardContent>
     </Card>
-  )
+  );
 }

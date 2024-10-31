@@ -29,7 +29,7 @@ export default function FAQ() {
       <Banner imageUrl={faqBanner.src} title="FAQ" />
       <div className="flex flex-col md:flex-row gap-8 p-10 mx-20 ">
         <div className="flex-1">
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-2xl font-bold mb-10">
             Frequently Asked Questions
           </h2>
           <Faq style="style1" />
